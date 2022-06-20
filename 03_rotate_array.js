@@ -9,3 +9,5 @@ function rotateArray(array, k) {
 
 console.log(rotateArray([1, 2, 3, 4], 2));
 console.log(rotateArray([1, 2, 3, 4], 1));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 2));
+console.log(rotateArray([], 2));
