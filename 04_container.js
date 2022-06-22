@@ -58,8 +58,8 @@ function biggestContainer3(array){
 	let maxArea = -Infinity;
 	do {
 		let width = Math.abs(li-ri);
-		let height = Math.max(Math.abs(array[li]), Math.abs(array[ri]))
-		maxArea = Math.max(li, width*height)
+		let height = Math.min(Math.abs(array[li]), Math.abs(array[ri]))
+		maxArea = Math.max(maxArea, width*height)
 		if (array[li] > array[ri]) {
 			ri--;
 		} else {
@@ -70,6 +70,6 @@ function biggestContainer3(array){
 }
 
 
-console.log(biggestContainer3([1, 5, 6, 3, 4]));
-console.log(biggestContainer2([1, 5, 6, 3, 4]));
-console.log(biggestContainer1([1, 5, 6, 3, 4]));
+console.log(biggestContainer3([1, 5, 6, 3, 4]), "solution3");
+console.log(biggestContainer2([1, 5, 6, 3, 4]), "solution2");
+console.log(biggestContainer1([1, 5, 6, 3, 4]), "solution1");
