@@ -15,4 +15,16 @@ function twoSums01(array, sum) {
 	return indeces;
 }
 
+
+function twoSums02(array, sum){
+	const sumIndexMap = {}
+	for (let i=0; i<array.length; i++){
+		sumIndexMap[array[i]] = i
+		if (sumIndexMap[sum - array[i]]) {
+			return [i, sumIndexMap[sum - array[i]]]
+		}
+	}
+}
+
 console.log(twoSums01([3,5,2,9],14))
+console.log(twoSums02([3,5,2,9],14))
