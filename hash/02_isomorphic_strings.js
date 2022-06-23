@@ -21,3 +21,4 @@ function isIsomorphic(str1, str2) {
 
 console.log(isIsomorphic("abacus", "rurfgs"))
 console.log(isIsomorphic("abacus", "ruzfgs"))
+console.log(isIsomorphic("green", "abccd"))
