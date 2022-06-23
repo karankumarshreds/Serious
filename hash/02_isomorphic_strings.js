@@ -10,7 +10,14 @@ function isIsomorphic(str1, str2) {
 	const map = {}
 	if (str1.length !== str2.length) return false 
 	for (let i=0; i<str1.length; i++) {
-		map[str1[i]] = str2[i]
-
+		if (!map[str1[i]]) {
+			map[str1[i]] = str2[i]
+		} else {
+			if (map[str1[i]] !== str2[i]) return false 
+		}
 	}
+	return true 
 }
+
+console.log(isIsomorphic("abacus", "rurfgs"))
+console.log(isIsomorphic("abacus", "ruzfgs"))
