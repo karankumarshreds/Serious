@@ -30,6 +30,20 @@ console.log(fibonacci02(3) === 2)
 console.log(fibonacci02(4) === 3)
 console.log(fibonacci02(6) === 8)
 
-// 0 1 1 2 3 5 8 13 
-// 0 1 2 3 4 5 6 7 index 
+// memoized solution 
+function fibonacci03(n) {
+		const map = {}
+		function recurse(n) {
+				if (n<=1) return n 
+				else {
+						if (!map[n-1]) map[n-1] = fibonacci03(n-1)
+						if (!map[n-2]) map[n-2] = fibonacci03(n-2)
+						return map[n-1] + map[n-2]
+				}
+		}
+		return recurse(n)
+}
 
+console.log(fibonacci03(3) === 2)
+console.log(fibonacci03(4) === 3)
+console.log(fibonacci03(6) === 8)
