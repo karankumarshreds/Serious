@@ -5,10 +5,7 @@
 
 let currentIndex = 2 
 let array = [0,1]
-function fibonacci(k) {
-		// 0 1 1 2 3 5 8
-		// 0 1 2 3 4 5 6 
-		// take 0 and add 1 to it 
+function fibonacci01(k) {
 		let _k = k -2 
 		function recurse(l) {
 				let sum = array[array.length-1] + array[array.length-2]
@@ -20,6 +17,19 @@ function fibonacci(k) {
 		return array[k]
 }
 
-console.log(fibonacci(3) === 2)
-console.log(fibonacci(4) === 3)
-console.log(fibonacci(6) === 8)
+console.log(fibonacci01(3) === 2)
+console.log(fibonacci01(4) === 3)
+console.log(fibonacci01(6) === 8)
+
+function fibonacci02(n){
+		if (n<=1) return n
+		else return fibonacci02(n-1) + fibonacci02(n-2)
+}
+
+console.log(fibonacci02(3) === 2)
+console.log(fibonacci02(4) === 3)
+console.log(fibonacci02(6) === 8)
+
+// 0 1 1 2 3 5 8 13 
+// 0 1 2 3 4 5 6 7 index 
+
