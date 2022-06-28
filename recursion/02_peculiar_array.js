@@ -14,3 +14,9 @@ function peculiarArray(array, power=1){
 }
 
 console.log(peculiarArray([2,3,[4,1,2]]) )
+
+/****************
+ * SC = O(d) where d is the max depth
+ * TC = O(N^2)
+****************/
+
