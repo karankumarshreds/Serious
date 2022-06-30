@@ -1,3 +1,7 @@
+// Given a rectangular path in the form of a binary matrix, find the length of the longest possible route from source 
+// to destination by moving to only non-zero adjacent positions, i.e., We can form the route from positions having their
+// value as 1. Note there should not be any cycles in the output path.
+
 function longestPath01(matrix, startPosition, endPosition) {
 
 	const visited = {}
