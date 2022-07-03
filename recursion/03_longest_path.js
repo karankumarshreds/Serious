@@ -16,6 +16,10 @@ function longestPath01(matrix, startPosition, endPosition) {
 		return false 
 	}
 
+	function isValidCoord(i,j) {
+		return isValueOne(i,j) && isValidIndex(i,j)
+	}
+
 	let maxDistance = 0
 
 	function calculate (startPosition, endPosition, distance) {
@@ -32,10 +36,10 @@ function longestPath01(matrix, startPosition, endPosition) {
 		visited[`${i},${j}`] = true;
 		
 		// check for top, bottom, right, left 
-		if (isValidIndex(i-1, j) && isValueOne(i-1,j)) calculate([i-1, j], endPosition,distance+1)
-		if (isValidIndex(i+1, j) && isValueOne(i+1,j)) calculate([i+1, j], endPosition,distance+1)
-		if (isValidIndex(i, j+1) && isValueOne(i,j+1)) calculate([i, j+1], endPosition,distance+1)
-		if (isValidIndex(i, j-1) && isValueOne(i,j-1)) calculate([i, j-1], endPosition,distance+1)
+		if (isValidCoord(i-1,j)) calculate([i-1, j], endPosition,distance+1)
+		if (isValidCoord(i+1, j)) calculate([i+1, j], endPosition,distance+1)
+		if (isValidCoord(i, j+1)) calculate([i, j+1], endPosition,distance+1)
+		if (isValidCoord(i, j-1)) calculate([i, j-1], endPosition,distance+1)
 
 		// if there is no option left to go, mark the point as unvisited 
 		visited[`${i},${j}`] = false 
