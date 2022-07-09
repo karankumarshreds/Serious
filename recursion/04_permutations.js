@@ -10,6 +10,7 @@ function permutations02(array) {
 		tmpArr[j] = tmp
 		return tmpArr
 	}
+
 	function start(i, arr) {
 		for(let j=i; j<array.length; j++) {
 			if (i===array.length-1) {
@@ -19,10 +20,10 @@ function permutations02(array) {
 			start(i+1, swap(arr, i, j))
 		}
 	}
+
 	start(0, array)
 
 	return result
 }
-
 
 console.log(permutations02([1,2,3]))
